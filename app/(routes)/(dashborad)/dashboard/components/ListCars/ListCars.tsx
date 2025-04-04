@@ -1,10 +1,11 @@
 "use client";
 import { Car } from "@prisma/client";
 import { ListCarsProps } from "./ListCars.types";
-import Image from "next/image";
+
 import { Fuel, Gauge, Gem, Heart, Users, Wrench } from "lucide-react";
 import { ModalAddReservation } from "@/components/Shared/ModalAddReservation";
 import { useLovedCars } from "@/hooks/use-loved-cars";
+import ShineImage from "@/app/(routes)/(home)/components/gsap-shine/Shine";
 
 export function ListCars(props: ListCarsProps) {
   const { cars } = props;
@@ -19,16 +20,20 @@ export function ListCars(props: ListCarsProps) {
         return (
           <div
             key={id}
-            className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-white via-slate-50 to-slate-100 border border-slate-200 hover:border-slate-300"
+            className="rounded-lg  hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-white via-slate-200 to-slate-100 border border-slate-900 hover:border-slate-900 p-4"
           >
             {/* Imagen del carro */}
-            <Image
+            
+
+            <ShineImage 
+
               src={photo}
               alt={name}
               width={400}
               height={600}
-              className="rounded-t-lg w-full lg:h-[13em] object-cover md:h-[13em] p-2"
-            />
+              className=""
+ />
+          
 
             {/* Detalles del carro */}
             <div className="p-6">

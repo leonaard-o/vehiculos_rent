@@ -13,7 +13,7 @@ export function NavbarDashboard() {
   const [isSheetOpen, setIsSheetOpen] = useState(false); // Estado para controlar si el Sheet está abierto
 
   return (
-    <nav className="flex items-center justify-between h-20 border-b-2 border-slate-800 px-2 gap-x-4 md:px-6 bg-background w-full">
+    <nav className="flex items-center justify-between h-20 border-b-2 border-slate-800 px-2 gap-x-4 md:px-6  w-full">
       {/* Menú lateral en modo desktop (visible en pantallas grandes) */}
       <div className="hidden xl:flex">
         <SidebarRoutes onItemClick={() => setIsSheetOpen(false)} />

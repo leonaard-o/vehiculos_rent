@@ -2,9 +2,10 @@
 import { useLovedCars } from "@/hooks/use-loved-cars";
 import { Car } from "@prisma/client";
 import { Fuel, Gauge, Gem, Heart, Users, Wrench } from "lucide-react";
-import Image from "next/image";
+
 import { ModalAddReservation } from "@/components/Shared/ModalAddReservation";
 import { Button } from "@/components/ui/button";
+import ShineImage from "@/app/(routes)/(home)/components/gsap-shine/Shine";
 
 export default function ListLovedCars() {
   const { lovedItems, removeLoveItem } = useLovedCars();
@@ -31,17 +32,19 @@ export default function ListLovedCars() {
             } = car;
             return (
                 <div
-                className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-white via-slate-50 to-slate-100 border border-slate-200 hover:border-slate-300"
+                className="rounded-lg  hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-white via-slate-200 to-slate-100 border border-slate-900 hover:border-slate-900 p-4"
                 key={id}
               >
                 {/* Imagen del carro */}
-                <Image
-                  src={photo}
-                  alt={name}
-                  width={400}
-                  height={600}
-                  className="rounded-t-lg w-full lg:h-[13em] object-cover md:h-[13em] p-2 "
-                />
+                <ShineImage 
+
+src={photo}
+alt={name}
+width={400}
+height={600}
+className=""
+/>
+
 
                 {/* Detalles del carro */}
                 <div className="p-6">

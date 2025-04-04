@@ -47,14 +47,20 @@ export function CardCar(props: CardCarProps) {
     }
   };
   return (
-    <div className="relative  p-4  rounded-lg shadow-md hover:shadow-lg">
+    <div className="rounded-lg  hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-white via-slate-200 to-slate-100 border border-slate-900 hover:border-slate-900 p-4 relative">
+      <div className=" flex items-center justify-center lg:w-full py-4">
+
 <Image
   src={car.photo}
   alt={car.name}
   width={400}
   height={600}
-  className="rounded-3xl h-[8em] lg:h-[12em] object-cover mt-5 shadow-[0_0_20px_10px_rgba(0,0,0,0.3)] backdrop-blur-sm "
+  className="rounded-3xl h-[8em] lg:h-[15em] object-cover 
+              shadow-[0_0_20px_10px_rgba(0,0,0,0.3)] 
+              transition-all duration-300 ease-in-out 
+              hover:scale-105 hover:shadow-lg hover:brightness-110  mt-8 lg:w-[27em] "
 />
+        </div>
       {car.isPublish ? (
         <p className="absolute top-0 right-0 w-full p-1 text-center text-white bg-green-800 rounded-lg">
           Published

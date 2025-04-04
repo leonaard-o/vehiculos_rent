@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { Fuel, Gauge, Gem, Heart, Users, Wrench } from "lucide-react";
 import { ModalAddReservation } from "@/components/Shared/ModalAddReservation";
 import Link from "next/link";
@@ -9,6 +8,8 @@ import { useLovedCars } from "@/hooks/use-loved-cars";
 import { useAuth } from "@clerk/nextjs";
 import { ListCarsProps } from "./listCars.types";
 import { SkeletonCars } from "@/components/Shared/SkeletonCars";
+
+import ShineFilters from "../../../components/gsap-filterscars/ShineFilters";
 
 
 export function ListCars(props: ListCarsProps) {
@@ -23,7 +24,7 @@ export function ListCars(props: ListCarsProps) {
       {cars.length === 0 && (
         <p>No se han encontrado vehiculos con estos filtros </p>
       )}
-      <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-4">
+      <div className="grid md:grid-cols-2 gap-3 lg:grid-cols-4">
         {cars.map((car: Car) => {
           const {
             priceDay,
@@ -38,13 +39,13 @@ export function ListCars(props: ListCarsProps) {
           } = car;
           const likedCar = lovedItems.some((item) => item.id === car.id);
           return (
-            <div key={id} className="p-1 rounded-lg shadow-md hover:shadow-lg">
-              <Image
+            <div key={id} className="p-2 relative overflow-hidden rounded-3xl  shadow-[0_0_25px_12px_rgba(0,0,0,0.25)] transition-all duration-300 ease-in-out hover:scale-105">
+              <ShineFilters
                 src={photo}
                 alt={name} // Cambié el alt a {name} para mejorar la accesibilidad
                 width={400}
                 height={600}
-                className="rounded-lg h-[11em] lg:h-[11em] object-cover p-2"
+                className=""
               />
 
               <div className="p-3">

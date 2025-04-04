@@ -12,6 +12,14 @@ body,
   .text-balance {
     text-wrap: balance;
   }
+  .mask-radial {
+    mask: radial-gradient(
+      ellipse at center,
+      rgba(143, 4, 4, 0.9) 40%,
+      rgba(184, 5, 169, 0.5) 70%,
+      rgba(217, 85, 3, 0) 90%
+    );
+  }
 }
 
 @layer base {
